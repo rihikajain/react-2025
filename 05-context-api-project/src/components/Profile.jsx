@@ -1,0 +1,15 @@
+import React, { useContext } from 'react'
+import UserContext from '../context/UserContext'
+import { useCallback } from 'react'
+
+const Profile = () => {
+  const { user } = useContext(UserContext)
+
+  if (!user) {
+    return <div>Login First!</div>
+  }
+  return <div>Welcome {user.username}</div>
+
+}
+
+export default Profile
