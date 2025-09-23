@@ -22,7 +22,9 @@ function App() {
 
   return (
     <div className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat" style={{ backgroundImage: `url('https://images.pexels.com/photos/259100/pexels-photo-259100.jpeg')` }}>
-      <div className="w-full">
+
+      <div className="w-full flex justify-center items-center flex-col ">
+        {/* <h1 className="text-white text-[30px] font-bold mb-10">Currency Convertor</h1> */}
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
 
           <div className="w-full mb-1">
