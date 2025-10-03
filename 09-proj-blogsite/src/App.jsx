@@ -1,9 +1,11 @@
 
-import React, { useState, useEffect } from 'react'
-import { Header, Footer } from "./components"
+import { useState, useEffect } from 'react'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login, logout } from './store/authslice'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -17,11 +19,9 @@ function App() {
         else {
           dispatch(logout())
         }
-
-
       })
       .finally(() => { setLoading(false) })
-  }, [])
+  })
 
 
 
