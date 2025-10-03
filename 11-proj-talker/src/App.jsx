@@ -32,7 +32,7 @@ function App() {
   let [open, setOpen] = useState(true)
   // bg-zinc-800
   return (
-    <main className=" h-screen ">
+    <main className=" h-screen font-semibold">
       <div className={`grid ${open ? 'grid-cols-5' : 'grid-cols-1'} h-screen text-center`}>
         <button className="mt-10 absolute left-10 z-10" onClick={() => setOpen(!open)}>{!open ? <ChevronRight /> : <ChevronLeft />}</button>
         {open && (<div className={`col-span-1} bg-zinc-200 relative`}>
@@ -44,7 +44,7 @@ function App() {
           <div className=" h-18/20 w-full  rounded-4xl mb-5  text-white pt-10 flex flex-col">
             {question && (
               <div className="flex justify-end">
-                <p className=" rounded-xl p-2 bg-[#1689fc] overflow-auto text-black mr-0 mb-2 text-end max-w-xl">{question}</p>
+                <p className=" rounded-xl p-2 bg-[#1689fc] overflow-auto text-white mr-0 mb-2 text-end max-w-xl">{question}</p>
               </div>
             )}
 
