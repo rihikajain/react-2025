@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom'
 
-
+//this is the contact 
 export default function Contact() {
   return (
     <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
