@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { ChevronRight, ChevronLeft, Loader2, Trash2, MessageSquare, Plus } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
+import chat from '../public/chat.png';
 
 function App() {
   const [question, setQuestion] = useState("");
@@ -47,7 +48,7 @@ function App() {
 
     const now = Date.now();
     if (now - lastRequestTime.current < RATE_LIMIT_MS) {
-      updateSessionResult(sessionIdToUse, "⏳ Wait a few seconds before asking again.");
+      updateSessionResult(sessionIdToUse, "Wait a few seconds before asking again.");
       return;
     }
     lastRequestTime.current = now;
@@ -64,7 +65,7 @@ function App() {
       updateSessionResult(sessionIdToUse, response.text || "No response received.");
     } catch (error) {
       console.error("API Error:", error);
-      updateSessionResult(sessionIdToUse, "❌ Error fetching answer.");
+      updateSessionResult(sessionIdToUse, "Error fetching answer.");
     } finally {
       setLoading(false);
     }
@@ -134,7 +135,7 @@ function App() {
     <main className="font-semibold h-screen bg-white">
       {/* Header */}
       <div className="fixed top-0 left-0 w-full h-14 bg-blue-500 text-white flex items-center px-4 z-50 shadow-md">
-        <img src="./assets/chat.png" alt="Logo" className="w-8 h-8 rounded-full mr-2" />
+        <img src={chat} alt="Logo" className="w-8 h-8 rounded-full mr-2" />
         <h1 className="text-lg font-bold">Talker</h1>
       </div>
 
@@ -189,7 +190,7 @@ function App() {
       <div className={`flex flex-col items-center ${sidebarOpen ? "ml-[20%] w-[80%]" : "ml-0 w-full"} h-screen relative pt-14`}>
         <div className="w-full flex-1 pt-4 p-2 mb-5 overflow-auto pb-12">
           {!currentSession || currentSession.qlist.length === 0 ? (
-            <h1 className="text-xl text-black text-center mt-8">Welcome! Start a new chat 👋</h1>
+            <h1 className="text-xl text-black text-center mt-8">Welcome! Start a new chat</h1>
           ) : (
             currentSession.qlist.map((q, i) => (
               <div key={i} id={`msg-${i}`}>
