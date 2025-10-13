@@ -134,7 +134,7 @@ function App() {
     <main className="font-semibold h-screen bg-white">
       {/* Header */}
       <div className="fixed top-0 left-0 w-full h-14 bg-blue-500 text-white flex items-center px-4 z-50 shadow-md">
-        <img src="../public/chat.png" alt="Logo" className="w-8 h-8 rounded-full mr-2" />
+        <img src="./assets/chat.png" alt="Logo" className="w-8 h-8 rounded-full mr-2" />
         <h1 className="text-lg font-bold">Talker</h1>
       </div>
 
