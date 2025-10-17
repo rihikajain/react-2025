@@ -1,1 +1,1 @@
-a practise project of react 
+a practice project of react.js
